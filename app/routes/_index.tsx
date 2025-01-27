@@ -59,7 +59,7 @@ export default function Index() {
       return (
         <iframe
           src={`/code/${base64Code}`}
-          className="w-full h-[500px] overflow-hidden border-0 bg-gray-100 rounded font-mono text-black"
+          className="w-full overflow-hidden border-0 bg-gray-100 rounded font-mono text-black"
           title="Code Preview"
           loading="lazy"
         />
@@ -81,17 +81,10 @@ export default function Index() {
       <Split
         sizes={[75, 25]}
         minSize={100}
-        expandToMin={false}
-        gutterSize={10}
-        gutterAlign="center"
-        snapOffset={30}
-        dragInterval={1}
-        direction="horizontal"
-        cursor="col-resize"
         className="flex flex-grow"
       >
         <div className="flex flex-col flex-1 overflow-hidden">
-          <div 
+          <div
             ref={chatContainerRef}
             className="flex-1 overflow-y-auto p-4 space-y-4"
           >
@@ -149,12 +142,13 @@ export default function Index() {
             </Form>
           </div>
         </div>
-        <div className="bg-gray-100 h-full overflow-hidden">
+        {/* Right side of the page */}
+        <div className="bg-gray-100 overflow-hidden">
           {messages.map((message) => (
             message.content.includes("<code>") &&
             message.content.includes("</code>") && (
               <div className="flex justify-start">
-                <div className="bg-white rounded-lg h-full overflow-hidden p-4 max-w-[80%]">
+                <div className="bg-white rounded-lg overflow-hidden p-4 max-w-[80%]">
                   {renderMessageContent(message.content)}
                 </div>
               </div>

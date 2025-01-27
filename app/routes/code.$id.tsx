@@ -18,30 +18,21 @@ export default function CodeDisplay() {
 
   return (
     <html>
-      <head>
-        <style>{`
-          html, body { 
-            margin: 0; 
-            padding: 16px; 
-            font-family: monospace; 
-            background: #efefef;
-            color: black;
-            overflow: hidden;
-            height: 100%;
-            min-height: 100%;
-          }
-          pre { 
-            white-space: pre-wrap; 
-            word-wrap: break-word; 
-            margin: 0;
-            overflow: hidden;
-            height: 100%;
-            background: #efefef;
-          }
-        `}</style>
-      </head>
-      <body>
-        <pre>{code}</pre>
+      <head></head>
+      <body className="m-0 p-4 font-mono bg-gray-100 text-black h-full min-h-full overflow-hidden">
+        <pre className="whitespace-pre-wrap break-words m-0 overflow-hidden h-full bg-gray-100">
+        <button 
+          className="mb-4 px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-600 transition-colors"
+          onClick={() => {
+            // Add your button click handler here
+            console.log('Button clicked');
+          }}
+        >
+          Click Me
+        </button>
+
+          {code}
+        </pre>
       </body>
     </html>
   );
