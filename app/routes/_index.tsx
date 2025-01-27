@@ -59,7 +59,7 @@ export default function Index() {
       return (
         <iframe
           src={`/code/${base64Code}`}
-          className="w-full h-[200px] border-0 bg-gray-100 rounded font-mono text-black"
+          className="w-full h-[500px] overflow-hidden border-0 bg-gray-100 rounded font-mono text-black"
           title="Code Preview"
           loading="lazy"
         />
@@ -149,12 +149,12 @@ export default function Index() {
             </Form>
           </div>
         </div>
-        <div className="bg-gray-100">
+        <div className="bg-gray-100 h-full overflow-hidden">
           {messages.map((message) => (
             message.content.includes("<code>") &&
             message.content.includes("</code>") && (
               <div className="flex justify-start">
-                <div className="bg-white rounded-lg p-4 max-w-[80%]">
+                <div className="bg-white rounded-lg h-full overflow-hidden p-4 max-w-[80%]">
                   {renderMessageContent(message.content)}
                 </div>
               </div>

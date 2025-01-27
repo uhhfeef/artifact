@@ -20,17 +20,23 @@ export default function CodeDisplay() {
     <html>
       <head>
         <style>{`
-          body { 
+          html, body { 
             margin: 0; 
             padding: 16px; 
             font-family: monospace; 
             background: #efefef;
             color: black;
+            overflow: hidden;
+            height: 100%;
+            min-height: 100%;
           }
           pre { 
             white-space: pre-wrap; 
             word-wrap: break-word; 
             margin: 0;
+            overflow: hidden;
+            height: 100%;
+            background: #efefef;
           }
         `}</style>
       </head>
